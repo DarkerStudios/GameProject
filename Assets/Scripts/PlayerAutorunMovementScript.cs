@@ -56,4 +56,5 @@ public class PlayerAutorunMovementScript : MonoBehaviour
         //Finally the controller.Move() will update our players location
         controller.Move(moveDirection * Time.deltaTime);
     }
+
 }
