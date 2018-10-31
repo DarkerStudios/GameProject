@@ -12,19 +12,60 @@ public class PlayerAutorunMovementScript : MonoBehaviour
     //Used for gravity setting
     private bool isFalling = false;
 
+    //Advanced moving
     float targetXLocation;
     float currentXLocation;
+    bool isMoving = false;
+    float distanceLeft;
 
     //Called when the game starts
-    void Start ()
+    void Start()
     {
+        Application.targetFrameRate = 60;
         //Gets our players CharacterController and stores it to a variable. By this way we don't have to get the controller every frame below
         controller = gameObject.GetComponent<CharacterController>();
-	}
-	
-	//Update is called every frame
-	void Update ()
+    }
+
+    //Update is called every frame
+    void Update()
     {
+        currentXLocation = gameObject.transform.position.x;
+        if (isMoving == true)
+        {
+            distanceLeft = Mathf.Abs(currentXLocation - targetXLocation);
+            if (FastApproximately(currentXLocation, targetXLocation, 0.1f))
+            {
+                isMoving = false;
+                moveDirection.x = 0;
+                gameObject.transform.position = new Vector3(targetXLocation, gameObject.transform.position.y, gameObject.transform.position.z);
+            }
+            else
+            {
+                if (currentXLocation > targetXLocation)
+                {
+                    moveDirection.x = -distanceLeft * 3 - 3;
+                    Debug.Log("1");
+                }
+                else
+                {
+                    moveDirection.x = distanceLeft * 3 + 3;
+                    Debug.Log("2");
+                }
+            }
+        }
+
+        if (isMoving == false)
+        {
+            if (Input.GetButtonDown("GoLeft"))
+            {
+                GoLeftPressed();
+            }
+            else if (Input.GetButtonDown("GoRight"))
+            {
+                GoRightPressed();
+            }
+        }
+
         //Checks if the player is on ground
         if (controller.isGrounded)
         {
@@ -35,10 +76,10 @@ public class PlayerAutorunMovementScript : MonoBehaviour
                 moveDirection.y = 10;
             }
         }
-        else 
+        else
         {
             //if character is not on ground and has no upward power left from jumping, it's is falling
-            if (isFalling==false&&moveDirection.y<=0)
+            if (isFalling == false && moveDirection.y <= 0)
             {
                 isFalling = true;
                 moveDirection.y = 0;
@@ -48,7 +89,7 @@ public class PlayerAutorunMovementScript : MonoBehaviour
         }
 
         //Changes the direction x value (left/right). The value 2 determines, how fast the player can move sideways
-        moveDirection.x = Input.GetAxis("Horizontal") * 200 * Time.deltaTime;
+        //moveDirection.x = Input.GetAxis("Horizontal") * 200 * Time.deltaTime;
 
         //direction z determines, how fast the player will move forward
         moveDirection.z = gameObject.transform.forward.z * 6;
@@ -57,4 +98,41 @@ public class PlayerAutorunMovementScript : MonoBehaviour
         controller.Move(moveDirection * Time.deltaTime);
     }
 
+    void GoLeftPressed()
+    {
+
+        if (currentXLocation >= 0)
+        {
+            if (currentXLocation == 0)
+            {
+                targetXLocation = -3;
+            }
+            else
+            {
+
+                targetXLocation = 0;
+            }
+            Debug.Log(targetXLocation);
+            isMoving = true;
+        }
+    }
+    void GoRightPressed()
+    {
+        if (currentXLocation <= 0)
+        {
+            if (currentXLocation == 0)
+            {
+                targetXLocation = 3;
+            }
+            else
+            {
+                targetXLocation = 0;
+            }
+            isMoving = true;
+        }
+    }
+    public static bool FastApproximately(float a, float b, float threshold)
+    {
+        return ((a - b) < 0 ? ((a - b) * -1) : (a - b)) <= threshold;
+    }
 }
