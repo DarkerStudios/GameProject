@@ -32,6 +32,7 @@ public class PlayerAutorunMovementScript : MonoBehaviour
         currentXLocation = gameObject.transform.position.x;
         if (isMoving == true)
         {
+            Debug.Log("MOVING");
             distanceLeft = Mathf.Abs(currentXLocation - targetXLocation);
             if (FastApproximately(currentXLocation, targetXLocation, 0.1f))
             {
@@ -73,7 +74,7 @@ public class PlayerAutorunMovementScript : MonoBehaviour
             //If player jumps, we set the direction y value to 8. This value determines, how high the player will jump
             if (Input.GetButtonDown("Jump"))
             {
-                moveDirection.y = 10;
+                moveDirection.y = 8;
             }
         }
         else
@@ -88,11 +89,12 @@ public class PlayerAutorunMovementScript : MonoBehaviour
             moveDirection.y = moveDirection.y - 20 * Time.deltaTime;
         }
 
+        //OLD CODE
         //Changes the direction x value (left/right). The value 2 determines, how fast the player can move sideways
         //moveDirection.x = Input.GetAxis("Horizontal") * 200 * Time.deltaTime;
 
         //direction z determines, how fast the player will move forward
-        moveDirection.z = gameObject.transform.forward.z * 6;
+        moveDirection.z = gameObject.transform.forward.z * 8;
 
         //Finally the controller.Move() will update our players location
         controller.Move(moveDirection * Time.deltaTime);
@@ -109,10 +111,8 @@ public class PlayerAutorunMovementScript : MonoBehaviour
             }
             else
             {
-
                 targetXLocation = 0;
             }
-            Debug.Log(targetXLocation);
             isMoving = true;
         }
     }
