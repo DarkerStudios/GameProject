@@ -34,7 +34,7 @@ public class PlayerAutorunMovementScript : MonoBehaviour
         {
             Debug.Log("MOVING");
             distanceLeft = Mathf.Abs(currentXLocation - targetXLocation);
-            if (FastApproximately(currentXLocation, targetXLocation, 0.1f))
+            if (CloseEnough(currentXLocation, targetXLocation, 0.1f))
             {
                 isMoving = false;
                 moveDirection.x = 0;
@@ -44,27 +44,24 @@ public class PlayerAutorunMovementScript : MonoBehaviour
             {
                 if (currentXLocation > targetXLocation)
                 {
-                    moveDirection.x = -distanceLeft * 3 - 3;
+                    moveDirection.x = -distanceLeft * 2 - 6;
                     Debug.Log("1");
                 }
                 else
                 {
-                    moveDirection.x = distanceLeft * 3 + 3;
+                    moveDirection.x = distanceLeft * 3 + 6;
                     Debug.Log("2");
                 }
             }
         }
 
-        if (isMoving == false)
+        if (Input.GetButtonDown("GoLeft"))
         {
-            if (Input.GetButtonDown("GoLeft"))
-            {
-                GoLeftPressed();
-            }
-            else if (Input.GetButtonDown("GoRight"))
-            {
-                GoRightPressed();
-            }
+            GoLeftPressed();
+        }
+        else if (Input.GetButtonDown("GoRight"))
+        {
+            GoRightPressed();
         }
 
         //Checks if the player is on ground
@@ -103,9 +100,9 @@ public class PlayerAutorunMovementScript : MonoBehaviour
     void GoLeftPressed()
     {
 
-        if (currentXLocation >= 0)
+        if (currentXLocation >= 0 || CloseEnough(currentXLocation, 0, 1.0f))
         {
-            if (currentXLocation == 0)
+            if (currentXLocation == 0 || CloseEnough(currentXLocation,0,1.0f))
             {
                 targetXLocation = -3;
             }
@@ -118,9 +115,9 @@ public class PlayerAutorunMovementScript : MonoBehaviour
     }
     void GoRightPressed()
     {
-        if (currentXLocation <= 0)
+        if (currentXLocation <= 0 || CloseEnough(currentXLocation, 0, 1.0f))
         {
-            if (currentXLocation == 0)
+            if (currentXLocation == 0 || CloseEnough(currentXLocation, 0, 1.0f))
             {
                 targetXLocation = 3;
             }
@@ -131,8 +128,8 @@ public class PlayerAutorunMovementScript : MonoBehaviour
             isMoving = true;
         }
     }
-    public static bool FastApproximately(float a, float b, float threshold)
+    public static bool CloseEnough(float firstNumber, float secondNumber, float threshold)
     {
-        return ((a - b) < 0 ? ((a - b) * -1) : (a - b)) <= threshold;
+        return ((firstNumber - secondNumber) < 0 ? ((firstNumber - secondNumber) * -1) : (firstNumber - secondNumber)) <= threshold;
     }
 }

@@ -16,6 +16,11 @@ ModelImporter:
     100020: Cube.008
     100022: Cube.009
     100024: Cube.010
+    100026: Cube.011
+    100028: Cube.012
+    100030: Cube.013
+    100032: Cube.014
+    100034: Cube.015
     400000: Cube
     400002: Cube.001
     400004: Cube.002
@@ -29,6 +34,11 @@ ModelImporter:
     400020: Cube.008
     400022: Cube.009
     400024: Cube.010
+    400026: Cube.011
+    400028: Cube.012
+    400030: Cube.013
+    400032: Cube.014
+    400034: Cube.015
     2100000: Material
     2300000: Cube
     2300002: Cube.001
@@ -41,6 +51,11 @@ ModelImporter:
     2300016: Cube.008
     2300018: Cube.009
     2300020: Cube.010
+    2300022: Cube.011
+    2300024: Cube.012
+    2300026: Cube.013
+    2300028: Cube.014
+    2300030: Cube.015
     3300000: Cube
     3300002: Cube.001
     3300004: Cube.002
@@ -52,6 +67,11 @@ ModelImporter:
     3300016: Cube.008
     3300018: Cube.009
     3300020: Cube.010
+    3300022: Cube.011
+    3300024: Cube.012
+    3300026: Cube.013
+    3300028: Cube.014
+    3300030: Cube.015
     4300000: Cube.003
     4300002: Cube.002
     4300004: Cube.001
@@ -63,6 +83,11 @@ ModelImporter:
     4300016: Cube.004
     4300018: Cube.010
     4300020: Cube.009
+    4300022: Cube.012
+    4300024: Cube.011
+    4300026: Cube.015
+    4300028: Cube.014
+    4300030: Cube.013
   externalObjects: {}
   materials:
     importMaterials: 1
