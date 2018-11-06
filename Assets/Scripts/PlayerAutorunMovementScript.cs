@@ -71,7 +71,7 @@ public class PlayerAutorunMovementScript : MonoBehaviour
             //If player jumps, we set the direction y value to 8. This value determines, how high the player will jump
             if (Input.GetButtonDown("Jump"))
             {
-                moveDirection.y = 8;
+                moveDirection.y = 9;
             }
         }
         else
@@ -80,7 +80,7 @@ public class PlayerAutorunMovementScript : MonoBehaviour
             if (isFalling == false && moveDirection.y <= 0)
             {
                 isFalling = true;
-                moveDirection.y = 0;
+                moveDirection.y = -2;
             }
             //direction y is the gravity of the player. Changing the value below determines, how much gravity the player has
             moveDirection.y = moveDirection.y - 20 * Time.deltaTime;
