@@ -71,7 +71,7 @@ public class PlayerAutorunMovementScript : MonoBehaviour
             //If player jumps, we set the direction y value to 8. This value determines, how high the player will jump
             if (Input.GetButtonDown("Jump"))
             {
-                moveDirection.y = 8;
+                moveDirection.y = 9;
             }
         }
         else
