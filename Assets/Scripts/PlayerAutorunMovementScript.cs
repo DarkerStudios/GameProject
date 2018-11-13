@@ -32,7 +32,6 @@ public class PlayerAutorunMovementScript : MonoBehaviour
         currentXLocation = gameObject.transform.position.x;
         if (isMoving == true)
         {
-            Debug.Log("MOVING");
             distanceLeft = Mathf.Abs(currentXLocation - targetXLocation);
             if (CloseEnough(currentXLocation, targetXLocation, 0.1f))
             {
@@ -45,12 +44,10 @@ public class PlayerAutorunMovementScript : MonoBehaviour
                 if (currentXLocation > targetXLocation)
                 {
                     moveDirection.x = -distanceLeft * 2 - 6;
-                    Debug.Log("1");
                 }
                 else
                 {
                     moveDirection.x = distanceLeft * 3 + 6;
-                    Debug.Log("2");
                 }
             }
         }
