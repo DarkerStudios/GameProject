@@ -72,6 +72,11 @@ public class PlayerAutorunMovementScript : MonoBehaviour
             movementAnimator.SetBool("Right", true);
             GoRightPressed();
         }
+        else if(isMoving == false)
+        {
+            movementAnimator.SetBool("Left", false);
+            movementAnimator.SetBool("Right", false);
+        }
 
         //Checks if the player is on ground
         if (controller.isGrounded)
