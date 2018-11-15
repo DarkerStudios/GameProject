@@ -9,6 +9,11 @@ public class PlayerAutorunMovementScript : MonoBehaviour
     //The direction player will be moving. Vector3 = (x, y, z). Each value can be changed, without touching other values
     private Vector3 moveDirection;
 
+    //Animations
+    public Animator movementAnimator;
+    private int leftHash;
+    private int rightHash;
+
     //Used for gravity setting
     private bool isFalling = false;
 
@@ -24,6 +29,9 @@ public class PlayerAutorunMovementScript : MonoBehaviour
         Application.targetFrameRate = 60;
         //Gets our players CharacterController and stores it to a variable. By this way we don't have to get the controller every frame below
         controller = gameObject.GetComponent<CharacterController>();
+
+        leftHash = Animator.StringToHash("MoveLeft");
+        rightHash = Animator.StringToHash("MoveRight");
     }
 
     //Update is called every frame
@@ -54,10 +62,14 @@ public class PlayerAutorunMovementScript : MonoBehaviour
 
         if (Input.GetButtonDown("GoLeft"))
         {
+            movementAnimator.SetBool("Right", false);
+            movementAnimator.SetBool("Left", true);
             GoLeftPressed();
         }
         else if (Input.GetButtonDown("GoRight"))
         {
+            movementAnimator.SetBool("Left", false);
+            movementAnimator.SetBool("Right", true);
             GoRightPressed();
         }
 
