@@ -11,8 +11,6 @@ public class PlayerAutorunMovementScript : MonoBehaviour
 
     //Animations
     public Animator movementAnimator;
-    private int leftHash;
-    private int rightHash;
 
     //Used for gravity setting
     private bool isFalling = false;
@@ -30,8 +28,6 @@ public class PlayerAutorunMovementScript : MonoBehaviour
         //Gets our players CharacterController and stores it to a variable. By this way we don't have to get the controller every frame below
         controller = gameObject.GetComponent<CharacterController>();
 
-        leftHash = Animator.StringToHash("MoveLeft");
-        rightHash = Animator.StringToHash("MoveRight");
     }
 
     //Update is called every frame
