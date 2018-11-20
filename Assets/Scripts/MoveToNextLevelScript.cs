@@ -22,6 +22,9 @@ public class MoveToNextLevelScript : MonoBehaviour {
     {
         if(other.tag == "Player")
         {
+            Debug.Log("Toimii");
+                
+            
             SceneManager.LoadScene(nextScene);
         }
         
