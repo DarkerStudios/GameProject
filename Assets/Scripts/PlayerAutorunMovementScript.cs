@@ -77,6 +77,9 @@ public class PlayerAutorunMovementScript : MonoBehaviour
         //Checks if the player is on ground
         if (controller.isGrounded)
         {
+            movementAnimator.SetBool("Jump", false);
+            movementAnimator.SetBool("Run", true);
+            
             isFalling = false;
             //If player jumps, we set the direction y value to 8. This value determines, how high the player will jump
             if (Input.GetButtonDown("Jump"))
@@ -86,6 +89,9 @@ public class PlayerAutorunMovementScript : MonoBehaviour
         }
         else
         {
+            movementAnimator.SetBool("Run", false);
+            movementAnimator.SetBool("Jump", true);
+            
             //if character is not on ground and has no upward power left from jumping, it's is falling
             if (isFalling == false && moveDirection.y <= 0)
             {
