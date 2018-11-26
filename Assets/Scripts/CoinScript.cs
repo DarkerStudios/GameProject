@@ -18,6 +18,7 @@ public class CoinScript : MonoBehaviour {
     {
         if(other.tag == "Player")
         {
+            GameObject.FindGameObjectWithTag("StatsManager").GetComponent<StatsManagerScript>().AddCoins(1);
             Destroy(gameObject);
         }
     }
