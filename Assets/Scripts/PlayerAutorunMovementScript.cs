@@ -24,6 +24,7 @@ public class PlayerAutorunMovementScript : MonoBehaviour
     //Called when the game starts
     void Start()
     {
+        Time.timeScale = 0.8f;
         Application.targetFrameRate = 60;
         //Gets our players CharacterController and stores it to a variable. By this way we don't have to get the controller every frame below
         controller = gameObject.GetComponent<CharacterController>();
