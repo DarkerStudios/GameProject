@@ -365,11 +365,6 @@ Prefab:
     m_Modifications:
     - target: {fileID: 224740367752277746, guid: 2dd2ee503fad6c846a8e70a0137ca068,
         type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224740367752277746, guid: 2dd2ee503fad6c846a8e70a0137ca068,
-        type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -457,6 +452,26 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 223192718539697184, guid: 2dd2ee503fad6c846a8e70a0137ca068,
+        type: 2}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 804484711}
+    - target: {fileID: 114603003395828924, guid: 2dd2ee503fad6c846a8e70a0137ca068,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114603003395828924, guid: 2dd2ee503fad6c846a8e70a0137ca068,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114603003395828924, guid: 2dd2ee503fad6c846a8e70a0137ca068,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2dd2ee503fad6c846a8e70a0137ca068, type: 2}
@@ -607,6 +622,11 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300054, guid: a37b098b0e95d6346b1b6cea010a9bd6, type: 3}
+--- !u!20 &804484711 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 20991655616550816, guid: 11b5de983c2d66d418e56ef92299505f,
+    type: 2}
+  m_PrefabInternal: {fileID: 518204593}
 --- !u!1 &921467101 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100044, guid: a37b098b0e95d6346b1b6cea010a9bd6,
