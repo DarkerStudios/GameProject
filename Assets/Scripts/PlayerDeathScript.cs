@@ -11,7 +11,7 @@ public class PlayerDeathScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(gameObject.transform.position.y < 0)
+		if(gameObject.transform.position.y < 10)
         {
             Instantiate(gameObject, new Vector3(0, 20, 0), Quaternion.identity);
             Destroy(gameObject);
