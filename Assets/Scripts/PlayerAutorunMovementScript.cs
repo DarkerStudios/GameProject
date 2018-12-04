@@ -57,14 +57,10 @@ public class PlayerAutorunMovementScript : MonoBehaviour
 
         if (Input.GetButtonDown("GoLeft"))
         {
-            movementAnimator.SetBool("Right", false);
-            movementAnimator.SetBool("Left", true);
             GoLeftPressed();
         }
         else if (Input.GetButtonDown("GoRight"))
         {
-            movementAnimator.SetBool("Left", false);
-            movementAnimator.SetBool("Right", true);
             GoRightPressed();
         }
         else if(isMoving == false)
@@ -83,7 +79,7 @@ public class PlayerAutorunMovementScript : MonoBehaviour
             //If player jumps, we set the direction y value to 8. This value determines, how high the player will jump
             if (Input.GetButtonDown("Jump"))
             {
-                moveDirection.y = 9;
+                JumpPressed();
             }
         }
         else
@@ -112,9 +108,10 @@ public class PlayerAutorunMovementScript : MonoBehaviour
         controller.Move(moveDirection * Time.deltaTime);
     }
 
-    void GoLeftPressed()
+    public void GoLeftPressed()
     {
-
+        movementAnimator.SetBool("Right", false);
+        movementAnimator.SetBool("Left", true);
         if (currentXLocation >= 0 || CloseEnough(currentXLocation, 0, 1.0f))
         {
             if (currentXLocation == 0 || CloseEnough(currentXLocation,0,1.0f))
@@ -128,8 +125,10 @@ public class PlayerAutorunMovementScript : MonoBehaviour
             isMoving = true;
         }
     }
-    void GoRightPressed()
+    public void GoRightPressed()
     {
+        movementAnimator.SetBool("Left", false);
+        movementAnimator.SetBool("Right", true);
         if (currentXLocation <= 0 || CloseEnough(currentXLocation, 0, 1.0f))
         {
             if (currentXLocation == 0 || CloseEnough(currentXLocation, 0, 1.0f))
@@ -142,6 +141,10 @@ public class PlayerAutorunMovementScript : MonoBehaviour
             }
             isMoving = true;
         }
+    }
+    public void JumpPressed()
+    {
+        moveDirection.y = 9;
     }
     public static bool CloseEnough(float firstNumber, float secondNumber, float threshold)
     {

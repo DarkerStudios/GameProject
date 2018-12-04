@@ -14,6 +14,7 @@ public class GameManagerScript : MonoBehaviour {
     {
         Time.timeScale = gameSpeed;
         Application.targetFrameRate = 60;
+        pausedGameGameObject.SetActive(false);
     }
 
     public void ContinueGame()
