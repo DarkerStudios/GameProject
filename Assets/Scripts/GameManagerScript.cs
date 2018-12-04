@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManagerScript : MonoBehaviour {
 
@@ -29,5 +30,9 @@ public class GameManagerScript : MonoBehaviour {
         removedWhenPausedGameObject.SetActive(false);
         pausedGameGameObject.SetActive(true);
         Time.timeScale = 0;
+    }
+    public void GoToMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }
