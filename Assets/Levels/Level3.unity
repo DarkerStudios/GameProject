@@ -292,36 +292,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114027721529460014, guid: 2dd2ee503fad6c846a8e70a0137ca068,
-        type: 2}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1372879543}
-    - target: {fileID: 114027721529460014, guid: 2dd2ee503fad6c846a8e70a0137ca068,
-        type: 2}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: GoLeftPressed
-      objectReference: {fileID: 0}
-    - target: {fileID: 114927171266135174, guid: 2dd2ee503fad6c846a8e70a0137ca068,
-        type: 2}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1372879543}
-    - target: {fileID: 114927171266135174, guid: 2dd2ee503fad6c846a8e70a0137ca068,
-        type: 2}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: JumpPressed
-      objectReference: {fileID: 0}
-    - target: {fileID: 114334912175798252, guid: 2dd2ee503fad6c846a8e70a0137ca068,
-        type: 2}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1372879543}
-    - target: {fileID: 114334912175798252, guid: 2dd2ee503fad6c846a8e70a0137ca068,
-        type: 2}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: GoRightPressed
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2dd2ee503fad6c846a8e70a0137ca068, type: 2}
   m_IsPrefabAsset: 0
@@ -1568,12 +1538,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33e5f0c0fae15a34096bd789e0f2f1de, type: 3}
   m_IsPrefabAsset: 0
---- !u!114 &1372879543 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114416154847969186, guid: 11b5de983c2d66d418e56ef92299505f,
-    type: 2}
-  m_PrefabInternal: {fileID: 332389155}
-  m_Script: {fileID: 11500000, guid: 82480be249edf594ea436d02d0464682, type: 3}
 --- !u!1001 &1453317665
 Prefab:
   m_ObjectHideFlags: 0

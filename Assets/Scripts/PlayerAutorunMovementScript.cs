@@ -97,10 +97,6 @@ public class PlayerAutorunMovementScript : MonoBehaviour
             moveDirection.y = moveDirection.y - 20 * Time.deltaTime;
         }
 
-        //OLD CODE
-        //Changes the direction x value (left/right). The value 2 determines, how fast the player can move sideways
-        //moveDirection.x = Input.GetAxis("Horizontal") * 200 * Time.deltaTime;
-
         //direction z determines, how fast the player will move forward
         moveDirection.z = gameObject.transform.forward.z * 8;
 
@@ -144,7 +140,10 @@ public class PlayerAutorunMovementScript : MonoBehaviour
     }
     public void JumpPressed()
     {
-        moveDirection.y = 9;
+        if (controller.isGrounded)
+        {
+            moveDirection.y = 9;
+        }
     }
     public static bool CloseEnough(float firstNumber, float secondNumber, float threshold)
     {
