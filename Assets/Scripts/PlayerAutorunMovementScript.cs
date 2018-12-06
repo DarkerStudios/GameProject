@@ -21,6 +21,9 @@ public class PlayerAutorunMovementScript : MonoBehaviour
     bool isMoving = false;
     float distanceLeft;
 
+    private float forwardSpeedMultiplier = 8.0f;
+    private bool isOnEndOfLevel = false;
+
     //Called when the game starts
     void Start()
     {
@@ -97,8 +100,21 @@ public class PlayerAutorunMovementScript : MonoBehaviour
             moveDirection.y = moveDirection.y - 20 * Time.deltaTime;
         }
 
-        //direction z determines, how fast the player will move forward
-        moveDirection.z = gameObject.transform.forward.z * 8;
+        if(isOnEndOfLevel==false)
+        {
+            //direction z determines, how fast the player will move forward
+            moveDirection.z = gameObject.transform.forward.z * forwardSpeedMultiplier;
+        }
+        else if(forwardSpeedMultiplier>0)
+        {
+            forwardSpeedMultiplier = forwardSpeedMultiplier - Time.deltaTime * 5;
+            if(forwardSpeedMultiplier<0)
+            {
+                forwardSpeedMultiplier = 0;
+            }
+            moveDirection.z = gameObject.transform.forward.z * forwardSpeedMultiplier;
+        }
+
 
         //Finally the controller.Move() will update our players location
         controller.Move(moveDirection * Time.deltaTime);
@@ -148,5 +164,11 @@ public class PlayerAutorunMovementScript : MonoBehaviour
     public static bool CloseEnough(float firstNumber, float secondNumber, float threshold)
     {
         return ((firstNumber - secondNumber) < 0 ? ((firstNumber - secondNumber) * -1) : (firstNumber - secondNumber)) <= threshold;
+    }
+
+    //At the end of level
+    public void SlowDown()
+    {
+        isOnEndOfLevel = true;
     }
 }

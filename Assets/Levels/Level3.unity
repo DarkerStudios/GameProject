@@ -1036,7 +1036,7 @@ Transform:
   - {fileID: 6172056}
   - {fileID: 2076262021}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &566700756 stripped
 GameObject:
@@ -1717,6 +1717,48 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300010, guid: 6bf105fcbfd669d46a1deffd200f3ee3, type: 3}
+--- !u!1001 &1554857097
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4698824890959950, guid: 4552c966cf797eb448660785207c539a, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4698824890959950, guid: 4552c966cf797eb448660785207c539a, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 22.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 4698824890959950, guid: 4552c966cf797eb448660785207c539a, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 191.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 4698824890959950, guid: 4552c966cf797eb448660785207c539a, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4698824890959950, guid: 4552c966cf797eb448660785207c539a, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4698824890959950, guid: 4552c966cf797eb448660785207c539a, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4698824890959950, guid: 4552c966cf797eb448660785207c539a, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4698824890959950, guid: 4552c966cf797eb448660785207c539a, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4552c966cf797eb448660785207c539a, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1001 &1612437573
 Prefab:
   m_ObjectHideFlags: 0

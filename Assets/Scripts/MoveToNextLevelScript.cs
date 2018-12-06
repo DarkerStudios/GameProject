@@ -6,25 +6,23 @@ using UnityEngine.SceneManagement;
 public class MoveToNextLevelScript : MonoBehaviour {
 
     private int nextScene;
-	// Use this for initialization
 	void Start () {
         nextScene = SceneManager.GetActiveScene().buildIndex +1;
-
-
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
         {
-            SceneManager.LoadScene(nextScene);
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAutorunMovementScript>().SlowDown();
+            StartCoroutine(DelayFornextLevel());
         }
         
     }
    
+    private IEnumerator DelayFornextLevel()
+    {
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene(nextScene);
+    }
 }
