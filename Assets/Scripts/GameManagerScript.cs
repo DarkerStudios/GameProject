@@ -20,6 +20,7 @@ public class GameManagerScript : MonoBehaviour {
 
     public void ContinueGame()
     {
+        GameObject.FindGameObjectWithTag("LevelMusic").GetComponent<AudioSource>().Play();
         pausedGameGameObject.SetActive(false);
         removedWhenPausedGameObject.SetActive(true);
         Time.timeScale = gameSpeed;
@@ -27,6 +28,7 @@ public class GameManagerScript : MonoBehaviour {
 
     public void PauseGame()
     {
+        GameObject.FindGameObjectWithTag("LevelMusic").GetComponent<AudioSource>().Pause();
         removedWhenPausedGameObject.SetActive(false);
         pausedGameGameObject.SetActive(true);
         Time.timeScale = 0;
