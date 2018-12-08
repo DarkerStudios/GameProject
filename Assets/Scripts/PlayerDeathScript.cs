@@ -13,8 +13,11 @@ public class PlayerDeathScript : MonoBehaviour {
 	void Update () {
 		if(gameObject.transform.position.y < deathHeight)
         {
-            Instantiate(gameObject, new Vector3(0, 20, 0), Quaternion.identity);
-            Destroy(gameObject);
+            GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(0, 20, 0);
+            Destroy(GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAutorunMovementScript>());
+            GameObject.FindGameObjectWithTag("Player").AddComponent<PlayerAutorunMovementScript>();
+            //Instantiate(gameObject, new Vector3(0, 20, 0), Quaternion.identity);
+            //Destroy(gameObject);
         }
 	}
 }

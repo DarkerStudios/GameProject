@@ -9,10 +9,10 @@ public class PlayerAutorunMovementScript : MonoBehaviour
     //The direction player will be moving. Vector3 = (x, y, z). Each value can be changed, without touching other values
     private Vector3 moveDirection;
 
-    //Animations
-    public Animator movementAnimator;
+    //Animator controls what animation will be played and when
+    private Animator movementAnimator;
 
-    //Used for gravity setting
+    //Used for gravity setting + jump can be only done if player is not falling
     private bool isFalling = false;
 
     //Advanced moving
@@ -21,32 +21,39 @@ public class PlayerAutorunMovementScript : MonoBehaviour
     bool isMoving = false;
     float distanceLeft;
 
+    //Determines the forward moving speed. Other values should be changed aswell if this will be changed
     private float forwardSpeedMultiplier = 8.0f;
+    //MoveToNextLevelScript sets this true in the end of the level. Player will slow down slightly when this is set true
     private bool isOnEndOfLevel = false;
 
     //Called when the game starts
     void Start()
     {
+        //Gets the Animator from child
+        movementAnimator = gameObject.GetComponentInChildren<Animator>();
         //Gets our players CharacterController and stores it to a variable. By this way we don't have to get the controller every frame below
         controller = gameObject.GetComponent<CharacterController>();
-
     }
 
-    //Update is called every frame
+    //Called every frame
     void Update()
     {
+        //Checks the x location (left/right location)
         currentXLocation = gameObject.transform.position.x;
         if (isMoving == true)
         {
+            //Checks the location for the target X location (used for determining speed for left/right movement)
             distanceLeft = Mathf.Abs(currentXLocation - targetXLocation);
             if (CloseEnough(currentXLocation, targetXLocation, 0.1f))
             {
+                //Stops the player
                 isMoving = false;
                 moveDirection.x = 0;
                 gameObject.transform.position = new Vector3(targetXLocation, gameObject.transform.position.y, gameObject.transform.position.z);
             }
             else
             {
+                //These determines how fast the player will move during going left/right
                 if (currentXLocation > targetXLocation)
                 {
                     moveDirection.x = -distanceLeft * 2 - 6;
@@ -58,10 +65,12 @@ public class PlayerAutorunMovementScript : MonoBehaviour
             }
         }
 
+        //PC input only
         if (Input.GetButtonDown("GoLeft"))
         {
             GoLeftPressed();
         }
+        //PC input only
         else if (Input.GetButtonDown("GoRight"))
         {
             GoRightPressed();
@@ -79,7 +88,6 @@ public class PlayerAutorunMovementScript : MonoBehaviour
             movementAnimator.SetBool("Run", true);
             
             isFalling = false;
-            //If player jumps, we set the direction y value to 8. This value determines, how high the player will jump
             if (Input.GetButtonDown("Jump"))
             {
                 JumpPressed();
@@ -107,6 +115,7 @@ public class PlayerAutorunMovementScript : MonoBehaviour
         }
         else if(forwardSpeedMultiplier>0)
         {
+            //slows down the player if it is in end of the level
             forwardSpeedMultiplier = forwardSpeedMultiplier - Time.deltaTime * 5;
             if(forwardSpeedMultiplier<0)
             {
@@ -114,7 +123,6 @@ public class PlayerAutorunMovementScript : MonoBehaviour
             }
             moveDirection.z = gameObject.transform.forward.z * forwardSpeedMultiplier;
         }
-
 
         //Finally the controller.Move() will update our players location
         controller.Move(moveDirection * Time.deltaTime);
@@ -158,6 +166,7 @@ public class PlayerAutorunMovementScript : MonoBehaviour
     {
         if (controller.isGrounded)
         {
+            //If player jumps, we set the direction y value to 9. This value determines, how high the player will jump
             moveDirection.y = 9;
         }
     }
