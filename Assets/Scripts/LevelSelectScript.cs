@@ -7,7 +7,7 @@ public class LevelSelectScript : MonoBehaviour {
 
     private int levelSelected = 0;
     public GameObject playButton;
-    private readonly int lastLevelNumber = 3;
+    private readonly int lastLevelNumber = 4;
 
 	void Start ()
     {
@@ -20,6 +20,10 @@ public class LevelSelectScript : MonoBehaviour {
         {
             levelSelected = index;
             playButton.SetActive(true);
+        }
+        else
+        {
+            playButton.SetActive(false);
         }
     }
 

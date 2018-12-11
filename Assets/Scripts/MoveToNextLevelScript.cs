@@ -23,6 +23,13 @@ public class MoveToNextLevelScript : MonoBehaviour {
     private IEnumerator DelayFornextLevel()
     {
         yield return new WaitForSeconds(1);
-        SceneManager.LoadScene(nextScene);
+        if(nextScene==5)
+        {
+            SceneManager.LoadScene(0);
+        }
+        else
+        {
+            SceneManager.LoadScene(nextScene);
+        }
     }
 }
