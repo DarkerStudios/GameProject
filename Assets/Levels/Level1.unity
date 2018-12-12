@@ -4241,11 +4241,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114327148131773244, guid: 11b5de983c2d66d418e56ef92299505f,
-        type: 2}
-      propertyPath: deathHeight
-      value: 9.1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11b5de983c2d66d418e56ef92299505f, type: 2}
   m_IsPrefabAsset: 0

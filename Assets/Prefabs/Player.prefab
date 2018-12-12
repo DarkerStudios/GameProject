@@ -1055,7 +1055,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1095244016524074}
   m_LocalRotation: {x: 0.21536909, y: -0.4759007, z: 0.121434376, w: 0.8440311}
-  m_LocalPosition: {x: 11.89, y: 7.89, z: -4.94}
+  m_LocalPosition: {x: 11.24, y: 7.29, z: -3.88}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 4393715373141026}
@@ -1137,6 +1137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11c67b73ba95ae94caf23991d69325f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathHeight: 9.1
 --- !u!114 &114416154847969186
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1148,7 +1149,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82480be249edf594ea436d02d0464682, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementAnimator: {fileID: 95587442194332736}
 --- !u!137 &137686827480171298
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
