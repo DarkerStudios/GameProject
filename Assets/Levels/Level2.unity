@@ -1424,15 +1424,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ccd94b8321bc2e9498107be8ff5ef080, type: 3}
       propertyPath: m_LocalScale.x
-      value: 200
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ccd94b8321bc2e9498107be8ff5ef080, type: 3}
       propertyPath: m_LocalScale.y
-      value: 200
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ccd94b8321bc2e9498107be8ff5ef080, type: 3}
       propertyPath: m_LocalScale.z
-      value: 200
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ccd94b8321bc2e9498107be8ff5ef080, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3266,15 +3266,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ccd94b8321bc2e9498107be8ff5ef080, type: 3}
       propertyPath: m_LocalScale.x
-      value: 200.00003
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ccd94b8321bc2e9498107be8ff5ef080, type: 3}
       propertyPath: m_LocalScale.y
-      value: 200.00009
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ccd94b8321bc2e9498107be8ff5ef080, type: 3}
       propertyPath: m_LocalScale.z
-      value: 200.00003
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: ccd94b8321bc2e9498107be8ff5ef080, type: 3}
       propertyPath: m_ReceiveShadows
@@ -3475,15 +3475,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ccd94b8321bc2e9498107be8ff5ef080, type: 3}
       propertyPath: m_LocalScale.x
-      value: 200
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ccd94b8321bc2e9498107be8ff5ef080, type: 3}
       propertyPath: m_LocalScale.y
-      value: 200
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ccd94b8321bc2e9498107be8ff5ef080, type: 3}
       propertyPath: m_LocalScale.z
-      value: 200
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: ccd94b8321bc2e9498107be8ff5ef080, type: 3}
       propertyPath: m_ReceiveShadows
@@ -5623,15 +5623,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ccd94b8321bc2e9498107be8ff5ef080, type: 3}
       propertyPath: m_LocalScale.x
-      value: 200
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ccd94b8321bc2e9498107be8ff5ef080, type: 3}
       propertyPath: m_LocalScale.y
-      value: 200
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ccd94b8321bc2e9498107be8ff5ef080, type: 3}
       propertyPath: m_LocalScale.z
-      value: 200
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: ccd94b8321bc2e9498107be8ff5ef080, type: 3}
       propertyPath: m_ReceiveShadows
